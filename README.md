@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Week Eight Project
 
-## Getting Started
+## Project - Build a blog (or similar thing) with comments
 
-First, run the development server:
+**Link to project:** _linkgoeshere_
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+_image of finished project_
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This week we added Next.js to our quiver of arrows and were tasked with using the framework to build an interactive website where a user can make posts, others can comment on those individual posts, and also view/sort posts by categories.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+In addition, we used Vercel for site and database hosting.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I kept track of my ideas, planning and progress here: [Planning](https://frankjs.notion.site/Day-Thirty-Six-Project-Build-a-Blog-with-Comments-5b2c240021f44cffaf1d30ebbb256325?pvs=4)
 
-## Learn More
+### Requirements & Deliverables
 
-To learn more about Next.js, take a look at the following resources:
+- Created with Next.js.
+- Design SQL schema.
+- Create a 'new post' form.
+- Create a 'new comment' form for each post.
+- Refresh the `/posts` route and the `/posts:postID` route when making a new post/comment respectively.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Stretch Goals**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Posts can be sorted by category.
+- Posts or comments can be edited.
+- Allow users to 'like' a post.
+- Allow users to 'delete' a post/comment.
 
-## Deploy on Vercel
+### User Stories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- As a user, I want to browse a list of posts, sortable by ascending or descending order.
+- As a user, I want to see a list of categories, and click on a category to see a list of posts in that category.
+- As a user, I want to be able to leave a comment sharing my thoughts on each post.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## The Outcome!
+
+### Features!
+
+-
+
+### What went well
+
+**Planning**
+
+- **DrawSQL**
+  ![my database plan](/project-images/schema-08-lasso-project.png)
+
+- **Functionality**
+
+  **User Interface and Design**
+
+### Sticky points and Difficulties
+
+**One**
+
+**Two**
+
+### Future improvements
+
+-
+
+### Resources
+
+DrawSQL - [My DrawSQL](https://drawsql.app/teams/personal-1367/diagrams/08-week-eight-project)
