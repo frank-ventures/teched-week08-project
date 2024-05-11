@@ -20,3 +20,13 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
 }
+
+input,
+select {
+  padding: 1rem;
+}
+
+select,
+option {
+  text-transform: capitalize;
+}

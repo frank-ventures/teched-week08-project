@@ -23,20 +23,32 @@ export default async function AddNewQuote() {
   async function AddQuote(formData) {
     "use server";
 
-    const title = formData.get("title");
-    const content = formData.get("content");
+    const quote = formData.get("quote");
+    const author = formData.get("author");
+    const category = formData.get("category");
+    const season = formData.get("season");
+    const episode = formData.get("episode");
+    const added_by = formData.get("added_by");
+    console.log(
+      "Submission is ",
+      quote,
+      author,
+      category,
+      season,
+      episode,
+      added_by
+    );
 
-    await sql`INSERT INTO posts (title, content) VALUES (${title},${content})`;
+    // await sql`INSERT INTO wkeight_quotes(quote, author, category_id, season_id, episode_id, added_by) VALUES (${quote}, ${author}, ${category}, ${season}, ${episode}, ${added_by})`;
 
-    revalidatePath("/posts");
+    revalidatePath("/allquotes");
 
-    redirect("/posts");
+    redirect("/allquotes");
   }
 
   // --- --- --- ---
   // What's displayed on our page
   // --- --- --- ---
-  console.log(userSeasonChoice);
   return (
     <>
       <div>
@@ -47,7 +59,6 @@ export default async function AddNewQuote() {
         categoriesResult={categoriesResult}
         seasonsResult={seasonsResult}
         episodesResult={episodesResult}
-        userSeasonChoice={userSeasonChoice}
       />
     </>
   );

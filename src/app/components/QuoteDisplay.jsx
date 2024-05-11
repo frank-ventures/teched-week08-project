@@ -28,6 +28,7 @@ export default async function QuoteDisplay({ id }) {
       <p>Season: {individualQuote.season}</p>
       <p>Episode: {individualQuote.episode}</p>
       <p>Uploaded on: {formattedDate}</p>
+      <p>Added by: {individualQuote.added_by}</p>
       <CommentDisplay postId={quoteId} />
     </>
   );

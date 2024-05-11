@@ -8,7 +8,7 @@ export default async function GetAllQuotes(params) {
     console.log("Params are empty");
 
     quotes = await sql`SELECT
-  wkeight_quotes.id, quote, author , upload_date,
+  wkeight_quotes.id, quote, author , upload_date, added_by,
   wkeight_categories.category AS category,
   wkeight_seasons.number AS season,
   wkeight_episodes.number AS episode
@@ -21,7 +21,7 @@ export default async function GetAllQuotes(params) {
   } else if (params.where) {
     console.log("Params are ", params);
     quotes = await sql`SELECT
-    wkeight_quotes.id, quote, author , upload_date,
+    wkeight_quotes.id, quote, author , upload_date, added_by,
     wkeight_categories.category AS category,
     wkeight_seasons.id AS season,
     wkeight_episodes.id AS episode
