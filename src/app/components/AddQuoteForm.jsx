@@ -160,7 +160,7 @@ export default function AddQuoteForm({
                 name={episode.number}
                 className=""
               >
-                {episode.number} - {episode.title}
+                S{userSeasonChoice} E{episode.number} - {episode.title}
               </option>
             ))}
           {userSeasonChoice === 2 &&
@@ -171,7 +171,7 @@ export default function AddQuoteForm({
                 name={episode.number}
                 className=""
               >
-                {episode.number} - {episode.title}
+                S{userSeasonChoice} E{episode.number} - {episode.title}
               </option>
             ))}
           {userSeasonChoice === 3 &&
@@ -182,7 +182,7 @@ export default function AddQuoteForm({
                 name={episode.number}
                 className=""
               >
-                {episode.number} - {episode.title}
+                S{userSeasonChoice} E{episode.number} - {episode.title}
               </option>
             ))}
         </select>

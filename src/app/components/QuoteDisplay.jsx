@@ -1,4 +1,5 @@
 import GetAllQuotes from "../allquotes/GetAllQuotes";
+import AddCommentForm from "./AddCommentForm";
 import CommentDisplay from "./CommentDisplay";
 
 export default async function QuoteDisplay({ id }) {
@@ -30,6 +31,7 @@ export default async function QuoteDisplay({ id }) {
       <p>Uploaded on: {formattedDate}</p>
       <p>Added by: {individualQuote.added_by}</p>
       <CommentDisplay postId={quoteId} />
+      <AddCommentForm />
     </>
   );
 }

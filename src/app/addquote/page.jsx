@@ -39,7 +39,7 @@ export default async function AddNewQuote() {
       added_by
     );
 
-    // await sql`INSERT INTO wkeight_quotes(quote, author, category_id, season_id, episode_id, added_by) VALUES (${quote}, ${author}, ${category}, ${season}, ${episode}, ${added_by})`;
+    await sql`INSERT INTO wkeight_quotes(quote, author, category_id, season_id, episode_id, added_by) VALUES (${quote}, ${author}, ${category}, ${season}, ${episode}, ${added_by})`;
 
     revalidatePath("/allquotes");
 
