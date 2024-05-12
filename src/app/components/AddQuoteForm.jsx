@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SubmitButton } from "./SubmitButton";
 
 export default function AddQuoteForm({
   AddQuote,
@@ -65,8 +66,11 @@ export default function AddQuoteForm({
   // --- --- --- --- --- --- --- ---
 
   return (
-    <div className="flex flex-row gap-2 p-2 bg-slate-300">
-      <form action={AddQuote} className="flex flex-col gap-2 w-3/6 text-black">
+    <div className="flex flex-row gap-2 p-2 bg-blue-300">
+      <form
+        action={AddQuote}
+        className="flex flex-col items-center w-3/6 gap-1 text-black"
+      >
         {/* --- --- --- --- */}
         <label htmlFor="quote">Enter the quote</label>
         <input
@@ -75,6 +79,7 @@ export default function AddQuoteForm({
           id="quote"
           placeholder="'Ronald Reagan?! The actor!!?"
           onChange={handleLivePreviewText}
+          required
         />
         {/* --- --- --- --- */}
         <label htmlFor="author">Who said it?</label>
@@ -84,6 +89,7 @@ export default function AddQuoteForm({
           id="author"
           placeholder="Coach Beard"
           onChange={handleLivePreviewText}
+          required
         />
         {/* --- --- --- --- */}
         <label htmlFor="category">Choose a Category for this quote:</label>
@@ -93,7 +99,7 @@ export default function AddQuoteForm({
           id="category"
           required
           defaultValue=""
-          className="bg-slate-500 "
+          className="bg-slate-500"
           onChange={handleLivePreviewDropdowns}
         >
           <option disabled value="">
@@ -194,10 +200,11 @@ export default function AddQuoteForm({
           id="added_by"
           placeholder="Your name..."
           onChange={handleLivePreviewText}
+          required
         />
         {/* --- --- --- --- */}
 
-        <button type="submit">Submit</button>
+        <SubmitButton />
       </form>
       {/* --- --- --- --- */}
 
@@ -211,7 +218,7 @@ export default function AddQuoteForm({
         <p>{form.category}</p>
         <h2>Season:</h2>
 
-        <p>{form.season}</p>
+        <p className="capitalize">{form.season}</p>
         <h2>Episode:</h2>
 
         <p>{form.episode}</p>

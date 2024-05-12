@@ -3,26 +3,20 @@ import Link from "next/link";
 import GetAllQuotes from "./GetAllQuotes";
 
 export default async function AllQuotesPage() {
-  // const quotes = await sql`SELECT
-  //   wkeight_quotes.id, quote, author, reference ,
-  //   wkeight_categories.category AS category,
-  //   wkeight_sources.type AS source
-  //   FROM wkeight_quotes
-  //   JOIN wkeight_categories ON wkeight_quotes.category_id = wkeight_categories.id
-  //   JOIN wkeight_sources ON wkeight_quotes.source_id = wkeight_sources.id
-  // `;
-  // const allQuotes = await quotes.rows;
-  // console.log(allQuotes);
-
   const allQuotes = await GetAllQuotes();
   console.log("All quotes page has called GetAllQuotes");
   return (
     <>
-      <h2>All the quotes</h2>
-      <div className="flex flex-col gap-3">
+      <h2>All the quotes in our database</h2>
+      <p>Click one to see the comments and full details</p>
+      <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 shadow">
         {allQuotes.map((quote) => {
           return (
-            <Link key={quote.id} href={`allquotes/${quote.id}`}>
+            <Link
+              key={quote.id}
+              href={`allquotes/${quote.id}`}
+              className="all-quotes-link p-4 bg-yellow-400 text-blue-800  shadow-xl text-2xl w-5/6 font-bold hover:scale-105 transform ease-in duration-200"
+            >
               {quote.quote}
             </Link>
           );

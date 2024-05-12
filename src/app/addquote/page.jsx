@@ -52,7 +52,9 @@ export default async function AddNewQuote() {
   return (
     <>
       <div>
-        <h2>You&apos;re on the add post page</h2>
+        <h2 className="text-xl text-center">
+          Have we missed a great quote? Add it here!
+        </h2>
       </div>
       <AddQuoteForm
         AddQuote={AddQuote}

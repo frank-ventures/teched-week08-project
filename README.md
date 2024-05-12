@@ -63,3 +63,7 @@ I kept track of my ideas, planning and progress here: [Planning](https://frankjs
 ### Resources
 
 DrawSQL - [My DrawSQL](https://drawsql.app/teams/personal-1367/diagrams/08-week-eight-project)
+
+Icons - [Thumbs up](https://www.flaticon.com/free-icon/thumb-up_9554962), [Thumbs down](https://www.flaticon.com/free-icon/thumb-down_9554965)
+
+Carousel help - [](https://robkendal.co.uk/blog/how-to-build-a-multi-image-carousel-in-react-and-tailwind/)
