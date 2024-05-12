@@ -1,4 +1,4 @@
-import GetAllQuotes from "@/app/allquotes/GetAllQuotes";
+import GetAllQuotes from "@/app/GetData/GetAllQuotes.js";
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
 

@@ -1,14 +1,18 @@
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
-import GetAllQuotes from "./GetAllQuotes";
+import GetAllQuotes from "../GetData/GetAllQuotes";
 
 export default async function AllQuotesPage() {
   const allQuotes = await GetAllQuotes();
   console.log("All quotes page has called GetAllQuotes");
   return (
     <>
-      <h2>All the quotes in our database</h2>
-      <p>Click one to see the comments and full details</p>
+      <div className="p-2  flex flex-col justify-center items-center">
+        {" "}
+        <h2>All the quotes in our database</h2>
+        <p>Click one to see the comments and full details</p>
+      </div>
+
       <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 shadow">
         {allQuotes.map((quote) => {
           return (

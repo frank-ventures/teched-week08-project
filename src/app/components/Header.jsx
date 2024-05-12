@@ -13,7 +13,7 @@ export default function Header() {
       <nav className="header-nav flex gap-2 w-5/6 justify-evenly">
         <Link href="/">Home</Link>
         <Link href="/allquotes">All Quotes</Link>
-        <Link href="/about">About</Link>
+        {/* <Link href="/about">About</Link> */}
         <Link href="/sort">Sort</Link>
         <Link href="/addquote">Add New Quote</Link>
       </nav>

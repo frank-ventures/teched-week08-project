@@ -56,6 +56,19 @@ export default async function GetAllQuotes(params) {
   JOIN wkeight_episodes ON wkeight_quotes.episode_id = wkeight_episodes.id
   WHERE wkeight_quotes.category_id = ${params.category}
 `;
+  } else if (params.seasons) {
+    console.log("Params are ", params);
+    quotes = await sql`SELECT
+wkeight_quotes.id, quote, author , upload_date, added_by,
+wkeight_categories.category AS category,
+wkeight_seasons.id AS season,
+wkeight_episodes.id AS episode
+FROM wkeight_quotes
+JOIN wkeight_categories ON wkeight_quotes.category_id = wkeight_categories.id
+JOIN wkeight_seasons ON wkeight_quotes.season_id = wkeight_seasons.id
+JOIN wkeight_episodes ON wkeight_quotes.episode_id = wkeight_episodes.id
+WHERE wkeight_quotes.season_id = ${params.seasons}
+`;
   }
 
   const allQuotes = await quotes.rows;

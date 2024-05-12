@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import GetAllQuotes from "../allquotes/GetAllQuotes";
+import GetAllQuotes from "../GetData/GetAllQuotes";
 import AddCommentForm from "./AddCommentForm";
 import CommentDisplay from "./CommentDisplay";
 import Link from "next/link";
@@ -44,7 +44,7 @@ export default async function QuoteDisplay({ id }) {
 
         <Link
           className="underline hover:text-yellow-400"
-          href={`/sort/season/${individualQuote.season}`}
+          href={`/sort/seasons/${individualQuote.season}`}
         >
           Season {individualQuote.season}
         </Link>

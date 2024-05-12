@@ -2,25 +2,25 @@ import GetAllQuotes from "@/app/GetData/GetAllQuotes.js";
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
 
-export default async function EpisodeQuotesPage({ params }) {
-  const episodeQuotes = await GetAllQuotes({ episode: params.id });
+export default async function SeasonsQuotesPage({ params }) {
+  const seasonsQuotes = await GetAllQuotes({ seasons: params.id });
 
-  console.log("epoisode page param id is", params.id);
-  console.log("episode quotes are", episodeQuotes);
+  console.log("season page param id is", params.id);
+  console.log("season quotes are", seasonsQuotes);
 
   // Get the episode title
-  const getEpisodeName =
-    await sql`SELECT title FROM wkeight_episodes WHERE id = ${params.id}`;
-  const [episodeName] = getEpisodeName.rows;
+  const getSeasonName =
+    await sql`SELECT number FROM wkeight_seasons WHERE id = ${params.id}`;
+  const [seasonName] = getSeasonName.rows;
 
   return (
     <>
       <h2>
         You&apos;re looking at quotes from:{" "}
-        <span className="italic">{episodeName.title}</span>
+        <span className="italic capitalize">Season {seasonName.number}</span>
       </h2>
       <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 shadow">
-        {episodeQuotes.map((episode) => {
+        {seasonsQuotes.map((episode) => {
           return (
             <>
               <Link
