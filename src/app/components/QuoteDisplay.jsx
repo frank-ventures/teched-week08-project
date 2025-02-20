@@ -5,18 +5,16 @@ import CommentDisplay from "./CommentDisplay";
 import Link from "next/link";
 
 export default async function QuoteDisplay({ id }) {
-  console.log(id);
   // Get the 'id' number from the param in the URL:
   const quoteId = id.id;
 
-  // Call our module function that handles getting all the quotes from the database, and pass in a "where" parameter so it knows which query to execute:
+  // Call our function that handles getting all the quotes from the database, and pass in a "where" parameter so it knows which query to execute:
   const [individualQuote] = await GetAllQuotes({ where: quoteId });
-  console.log("Result of GetAllQuote call with param is: ", individualQuote);
 
   // Format the date into a nice readable format
   const day = individualQuote.upload_date.getDate();
   const month = individualQuote.upload_date.toLocaleString("en", {
-    month: "long"
+    month: "long",
   });
   const year = individualQuote.upload_date.getFullYear();
   const formattedDate = `${day} ${month} ${year}`;
@@ -29,7 +27,7 @@ export default async function QuoteDisplay({ id }) {
 
   return (
     <>
-      <div className="flex flex-col gap-1 quote-container p-5 mt-4 bg-blue-800">
+      <div className="flex flex-col gap-1 quote-container p-5 mt-4 mx-8 bg-blue-800 text-blue-400">
         <div className="quote-text bg-yellow-400 p-8 shadow-lg mb-4">
           <h2 className="text-4xl text-blue-900">
             &ldquo;{individualQuote.quote}&rdquo;
@@ -42,21 +40,25 @@ export default async function QuoteDisplay({ id }) {
 
         <p className="italic">{individualQuote.category}</p>
 
-        <Link
-          className="underline hover:text-yellow-400"
-          href={`/sort/seasons/${individualQuote.season}`}
-        >
-          Season {individualQuote.season}
-        </Link>
-        <Link
-          className="underline hover:text-yellow-400"
-          href={`/sort/episodes/${individualQuote.episode}`}
-        >
-          Episode {individualQuote.episode} - &ldquo;{episodeSingle.title}
-          &rdquo;
-        </Link>
-        <p>Uploaded on {formattedDate}</p>
-        <p>Added by {individualQuote.added_by}</p>
+        <p>
+          <Link
+            className="underline hover:text-yellow-400"
+            href={`/sort/seasons/${individualQuote.season}`}
+          >
+            Season {individualQuote.season}
+          </Link>
+          {" - "}
+          <Link
+            className="underline hover:text-yellow-400"
+            href={`/sort/episodes/${individualQuote.episode}`}
+          >
+            Episode {individualQuote.episode} - &ldquo;{episodeSingle.title}
+            &rdquo;
+          </Link>
+        </p>
+        <p>
+          Added by {individualQuote.added_by} on {formattedDate}
+        </p>
       </div>
 
       <CommentDisplay quoteId={quoteId} />

@@ -20,7 +20,7 @@ export default async function Home() {
 
         <Link
           href="/allquotes"
-          className="p-4 border-blue-800 border-2 rounded bg-yellow-400 text-blue-800"
+          className="p-4 border-blue-800 border-2 rounded bg-yellow-400 text-blue-800 shadow-md"
         >
           See all our quotes
         </Link>
