@@ -12,7 +12,7 @@ export default function Header() {
         </div>
       </Link>
 
-      <nav className="header-nav flex gap-2 w-5/6 justify-evenly">
+      <nav className="header-nav flex gap-2 w-5/6 justify-evenly text-blue-800">
         <Link href="/">Home</Link>
         <Link href="/allquotes">All Quotes</Link>
         {/* <Link href="/about">About</Link> */}

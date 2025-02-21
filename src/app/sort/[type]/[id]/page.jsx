@@ -1,6 +1,6 @@
+import IndividualQuote from "@/app/components/IndividualQuote";
 import GetAllQuotes from "@/app/GetData/GetAllQuotes.js";
 import { sql } from "@vercel/postgres";
-import Link from "next/link";
 
 export default async function SortIdPage({ params }) {
   console.log("id page params are", params);
@@ -43,17 +43,7 @@ export default async function SortIdPage({ params }) {
       </h2>
       <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 py-8 mx-8 my-4 shadow">
         {results.map((quote) => {
-          return (
-            <>
-              <Link
-                key={quote.id}
-                href={`../../allquotes/${quote.id}`}
-                className="all-quotes-link p-4 bg-yellow-400 text-blue-800  shadow-xl text-2xl w-5/6 font-bold hover:scale-105 transform ease-in duration-200"
-              >
-                {quote.quote}
-              </Link>
-            </>
-          );
+          return <IndividualQuote quote={quote} />;
         })}
       </div>
     </section>
