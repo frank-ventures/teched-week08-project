@@ -12,7 +12,7 @@ export default async function AllQuotesPage() {
 
       <section className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 my-8 shadow">
         {allQuotes.map((quote) => {
-          return <IndividualQuote quote={quote} />;
+          return <IndividualQuote quote={quote} key={quote.id} />;
         })}
       </section>
     </section>

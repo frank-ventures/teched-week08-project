@@ -43,7 +43,7 @@ export default async function SortIdPage({ params }) {
       </h2>
       <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 py-8 mx-8 my-4 shadow">
         {results.map((quote) => {
-          return <IndividualQuote quote={quote} />;
+          return <IndividualQuote quote={quote} key={quote.id} />;
         })}
       </div>
     </section>
