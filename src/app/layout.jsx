@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <Header />
 
         {children}
-        <footer className=" w-screen bg-slate-800 p-5 text-slate-300 text-center">
+        <footer className="w-screen bg-slate-800 p-5 text-slate-300 text-center self-end">
           By{" "}
           <a href="https://github.com/frank-ventures" target="blank">
             Frankie

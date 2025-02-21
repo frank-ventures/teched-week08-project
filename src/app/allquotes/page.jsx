@@ -4,13 +4,13 @@ import GetAllQuotes from "../GetData/GetAllQuotes";
 export default async function AllQuotesPage() {
   const allQuotes = await GetAllQuotes();
   return (
-    <>
-      <div className="p-2 flex flex-col justify-center items-center text-blue-400 italic">
+    <section>
+      <article className="p-2 mt-4 flex flex-col justify-center items-center text-blue-400 italic">
         <h2>All the quotes in our database</h2>
         <p>Click one to see the comments and full details</p>
-      </div>
+      </article>
 
-      <div className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 shadow">
+      <section className="all-quotes-container flex flex-col items-center gap-10 bg-blue-800 p-8 mx-8 my-8 shadow">
         {allQuotes.map((quote) => {
           return (
             <Link
@@ -22,7 +22,7 @@ export default async function AllQuotesPage() {
             </Link>
           );
         })}
-      </div>
-    </>
+      </section>
+    </section>
   );
 }
