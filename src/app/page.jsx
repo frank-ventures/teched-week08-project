@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col justify-center items-center h-full ">
-      <section className="h-2/4 w-2/4 bg-blue-400 border-2 border-blue-800 flex flex-col gap-6 items-center justify-center">
+      <section className="sm:h-3/4 sm:w-2/4 p-2 sm:p-8 bg-blue-400 border-2 border-blue-800 flex flex-col gap-6 items-center justify-center">
         <article>
           <h2 className="text-3xl text-center mb-2 text-blue-800">
             Welcome to Quote Lasso

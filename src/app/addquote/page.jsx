@@ -52,7 +52,7 @@ export default async function AddNewQuote() {
   return (
     <>
       <div>
-        <h2 className="text-xl text-center">
+        <h2 className="text-xl text-center text-blue-400 py-4">
           Have we missed a great quote? Add it here!
         </h2>
       </div>

@@ -7,7 +7,7 @@ export default function AddQuoteForm({
   AddQuote,
   categoriesResult,
   seasonsResult,
-  episodesResult
+  episodesResult,
 }) {
   // --- --- --- --- --- --- --- ---
   // Variables we will use in this component. The users choice of season, and 3 arrays containing episodes by season:
@@ -66,20 +66,21 @@ export default function AddQuoteForm({
   // --- --- --- --- --- --- --- ---
 
   return (
-    <div className="flex flex-row gap-2 p-2 bg-blue-300">
+    <div className="flex flex-col sm:flex-row items-center w-full gap-2 p-4 bg-blue-300">
       <form
         action={AddQuote}
-        className="flex flex-col items-center w-3/6 gap-1 text-black"
+        className="flex flex-col items-center w-5/6 gap-1 text-black"
       >
         {/* --- --- --- --- */}
         <label htmlFor="quote">Enter the quote</label>
-        <input
+        <textarea
           type="text"
           name="quote"
           id="quote"
           placeholder="'Ronald Reagan?! The actor!!?"
           onChange={handleLivePreviewText}
           required
+          className="w-5/6"
         />
         {/* --- --- --- --- */}
         <label htmlFor="author">Who said it?</label>
@@ -90,6 +91,7 @@ export default function AddQuoteForm({
           placeholder="Coach Beard"
           onChange={handleLivePreviewText}
           required
+          className="w-5/6"
         />
         {/* --- --- --- --- */}
         <label htmlFor="category">Choose a Category for this quote:</label>
@@ -99,7 +101,7 @@ export default function AddQuoteForm({
           id="category"
           required
           defaultValue=""
-          className="bg-slate-500"
+          className="bg-slate-500 w-5/6"
           onChange={handleLivePreviewDropdowns}
         >
           <option disabled value="">
@@ -121,7 +123,7 @@ export default function AddQuoteForm({
           id="season"
           required
           defaultValue=""
-          className="bg-slate-500 "
+          className="bg-slate-500 w-5/6"
           onChange={handleSeasonChoice}
         >
           <option disabled value="">
@@ -148,7 +150,7 @@ export default function AddQuoteForm({
           id="episode"
           required
           defaultValue=""
-          className="bg-slate-500 "
+          className="bg-slate-500 w-5/6"
           onChange={handleLivePreviewDropdowns}
         >
           <option disabled value="">
@@ -201,6 +203,7 @@ export default function AddQuoteForm({
           placeholder="Your name..."
           onChange={handleLivePreviewText}
           required
+          className="w-5/6"
         />
         {/* --- --- --- --- */}
 
@@ -208,7 +211,7 @@ export default function AddQuoteForm({
       </form>
       {/* --- --- --- --- */}
 
-      <div className="live-preview">
+      <div className="live-preview w-5/6">
         <h2>Quote:</h2>
         <p>{form.quote}</p>
         <h2>Said by:</h2>
